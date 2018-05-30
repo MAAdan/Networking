@@ -68,7 +68,7 @@ extension URL {
     
     func createFileDestinationForURLIn(folder: String) -> DownloadRequest.DownloadFileDestination {
         return { _, response in
-            print("statusCode: \(response.statusCode) \(response.url?.absoluteString)")
+            print("statusCode: \(response.statusCode) url: \(response.url?.absoluteString ?? "")")
             
             let fileURL = self.createPathForURLIn(folder: folder)
             return (destinationURL: fileURL, options: [.removePreviousFile, .createIntermediateDirectories])
